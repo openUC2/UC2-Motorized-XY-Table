@@ -1,75 +1,191 @@
-# Automation of a manual microscope stage
+
+<p align="left">
+<a href="#logo" name="logo"><img src="https://raw.githubusercontent.com/bionanoimaging/UC2-GIT/master/IMAGES/UC2_logo_text.png" width="400"></a>
+</p>
+
+# openUC2 *Motorized XY Table*
+---
+
 __keywords__: Stepper motors, Arduino, Python, Freecad, 3D printing
 
 
+The goal of this project is to convert a manual microscope stage into a motorized one that can be used with the UC2 system.
+The stage is controlled through a common GRBL (i.e. 3D printer/CNC) interface and also integrates into the [ImSwitch](https://github.com/beniroquai/ImSwitch/tree/master/imswitch) software to control complex microscopy setups.
+The precision of displacement approaches the micrometer. 
+This repo is a fork from the [SonyCSLParis](https://github.com/SonyCSLParis/Motorized-stage) group.
 
-The goal of this project is to convert a manual microscope stage into a motorized one.   
-We control the motorized stage via Python and provide a user-friendly interface as well as the 3D models for the parts we replaced.
-The precision of displacement approaches the micrometer.   
-We added precisions for the budget. The maximum budget if you buy the manual stage and go through a supplier for the 3D-printing is 500€.
+Curious to see what this looks like? Keep scrolling!
+
 
 <p align="center">
-<img src="images/before_after.png" width="600"/>
+<img src="images/MicronStage_7.jpg" width="600"/>
 </p>
 
+All necessary parts besides the motors and the stage can be 3D printed. The overall price is ~200€.
 
-# Method
+
+***Features:***
 
 The knobs initially used to manually move the platform are linked to motors via 2 belt-pulley systems (X and Y displacements). One removable part of the platform is replaced by a 3D-printed part that allows to fix the two motors. The pulleys are also 3D-printed to fit on the knobs. 
 
-An Arduino is used to control the two stepper motors with two motor shields. The motors are controllable
--  via Arduino through the serial interface
-- with a Python library that communicates serially with the Arduino
-- with a user-friendly Tkinter interface based on the Python library
+* Interact with it using GRBL/GCode
+* large-scale microscopy slide scanning 
+* easy to build 
+* simple to automate 
+* 
 
-# Bill of materials
 
-## Hardware :gear:
-We used what we had in our drawers, it may be possible to reduce the costs by changing some of the equipment. 
 
-| Component|      Quantity      |  Price per unit | Example|  
-|----------|:-------------:|------:|------:|  
-| Manual XY stage |  1 | 245€ | [Amazon](https://www.manualpositioning.com/e_products_show/?id=45)|  
-| Arduino Uno |    1   |   24€ | [Robotshop](https://www.robotshop.com/eu/fr/microcontroleur-arduino-uno-r3-usb.html)|  
-| Stepper driver | 2 |    10€ | [Robotshop](https://www.robotshop.com/eu/fr/controleur-moteur-pas-easydriver.html?gclid=EAIaIQobChMIhLiChaj58QIVxQwGAB1bUgYvEAQYASABEgIi8vD_BwE) |  
-| Stepper motor  (0.9 °/s, 11 N/cm)  |1 | 11€ | [17HM08-1204S](https://www.omc-stepperonline.com/fr/nema-17-bipolaire-0-9deg-11ncm-15-6oz-in-1-2a-3-6v-42x42x21mm-4-fils.html)|  
-| Stepper motor with gearbox| 1| 73€ |[42STH38-100](https://www.gotronic.fr/art-moteur-42sth38-100-18839.htm)|  
+## In-Action
+
+*The stage in action.*
+
+<p align="center">
+<a href="#logo" name="logo"><img src="./IMAGES/stage.gif" width="600"></a>
+</p>
+
+
+# Software
+
+The stage is drive by 2 NEMA 17 stepper motors. For this we use a simple Arduino + CNC Shield v3. We don't want to specify the correct usage of the code here as there are many tutorials for how to interact with stepper motors and Arduino through e.g. Python. A more in-depth tutorial can be found in our [UC2-Hi2 APP](https://github.com/openUC2/UC2-Hi2) that makes use of the Makerbase MKS board and a customized PYTHON Interface. 
+If you need assistance, don't hesitate to reach out to us! 
+
+# Hardware
+
+Below we describe how the device can be build and assembled in order to replicate the whole system as shown in the rendering above. One needs additional parts that can be found in the core [openUC2 repository](https://github.com/bionanoimaging/UC2-GIT).
+
+
+## Bill of material
+
+Below you will find all components necessary to build this device
+
+### 3D printing files
+
+All these files need to be printed. We used a Prusa i3 MK3 using PLA Prusament (Galaxy Black) at layer height x.x mm and infill xx%.
+
+***THIS WILL BE UPDATED SOON!***
+
+|  Type | Details  |  Price | Link  | IMAGE |
+|---|---|---|---|---|
+| Sample inset |  This can hold three standard sample slides |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_sampleinsert.stl)  | <p align="center"> <img src="images/STL_1.png" width="200"/></p>  |
+| Motor mount |  This holds the two NEMA 17 stepper motors |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_motormount.stl)  | <p align="center"> <img src="images/STL_2.png" width="200"/></p>  |
+| UC2 mount |  This mounts the stage on the cubes |  1,00 € | [Part.stl](./STL/30_XYTabel_Aliexpress_basplateadapter.stl)  | <p align="center"> <img src="images/STL_3.png" width="200"/></p>  |
+| Gear Large | For the belt |  1,00 € | [Part.stl](./STL/large_button_100t.stl)  | |
+| Gear small |  For the belt |  1,00 € | [Part.stl](./STL/medium_button_80t.stl)  |  |
+| 2x Pulley  |  For the belt |  1,00 € | [Part.stl](./STL/PulleyGT2_nut.stl)  |  |
+
+
+
+### Additional parts
+This is used in the current version of the setup
+
+|  Type | Details  |  Price | Link  |
+|---|---|---|---|
+| Microscopy XY table |  |  55€ + Shiping  | [Aliexpress](https://de.aliexpress.com/item/32850719102.html)  |
+| 2x Pancake NEMA 17 motors  |  9€ + Shiping  | [Ebay](https://www.ebay.de/itm/392553834244?mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5338766899&toolid=10029&customid=fc3455a0e96f52a60f2ec9abd03107d9&_trkparms=ispr%3D1&amdata=enc%3A1vaiEtGA-SQiwyEWSYtvliA35)  |
 | Motor belt GT2 |2 |1€|[Phidgets](https://www.phidgets.com/?tier=2&catid=42&pcid=35) |
 | Motor pulley 20 teeth/5mm bore |2 | 1€ |[Phidgets](https://www.phidgets.com/?tier=2&catid=42&pcid=35) | |
+| Arduino + CNC Shield v3 + A4988 Drivers + 12 V supply  |2 | 20€ |[roboterbausatz.de]() | |
 | Connection wires | | |  
 | Screws M2, M3 | | |  
 | 3D printer |
 
-Websites where you can buy the hardware: Motedis, Phidgets, Robotshop, rs-online, RepRap
 
-If you don't own a 3D printer you can use the platform [Sculpteo](https://www.sculpteo.com). Average delivery time: 2 weeks, possibility to pay for faster delivery. [Example of order](images/sculpteo_order.png).
+### Design files
 
-
-## Software :desktop_computer:
-Only open-source softwares
-
-| Software | Version we used | Download |
-|----------|:-------------:|:-------------:|  
-| Freecad | 0.19 |  [download](https://wiki.freecadweb.org/Download)
-| Arduino | 1.8.13 | [download](https://www.arduino.cc/en/software)
-| Python  | 3.7 |[install](https://github.com/Alienor134/Teaching/blob/master/Python/Installing_Anaconda_creating_environment.md)
+***Coming soon*** but will be in in the [INVENTOR](./INVENTOR) folder.
 
 
+### Assembly of the DEVICE
 
-## Codes and files provided :chart_with_upwards_trend:
+***1.*** *Remove the ring on the bottom surface (some screws) and add the UC2 baseplate adapter with M3 screws*
 
-### 3D designs: 
-- [scalable pulley Freecad](3D_models/large_button.FCStd) (modified from [manueaswn's scalable pulley](https://www.thingiverse.com/thing:3875983) )
-- [small button pulley](3D_models/large_button_100t.stl)  
-- [large button pulley](3D_models/medium_button_80t.stl)
-- [plate element](3D_models/plaque_moteur_gearbox.stl)
+<p align="center">
+<a> <img src="./IMAGES/MicronStage_1.jpg" width="300"></a>
+</p>
 
-### Control of motors by Arduino 
-- [libromi](https://github.com/romi/libromi/tree/c6992f0516e695cd28e09cd8dcbb921d4bc2097d) (written for the [Romi Project](https://github.com/romi/libromi))
-- [interface](codes/launch_interface.py)
+<p align="center">
+<a> <img src="./IMAGES/MicronStage_4.jpg" width="300"></a>
+</p>
+
+***2.*** *Remove the stickers for the markers and unscrew the metal bar*
+
+<p align="center">
+<a> <img src="./IMAGES/MicronStage_2.jpg" width="300"></a>
+</p>
+
+<p align="center">
+<a> <img src="./IMAGES/MicronStage_3.jpg" width="300"></a>
+</p>
+
+***3.*** *Add the motors to the motor holder with M3 screws*
+
+***PICTURES MISSING***
+
+***4.*** *Add motor bar to the stage with M2 and M3 screws*
+
+***PICTURES MISSING***
+
+***5.*** *Add gears to motors and knobs*
+
+***PICTURES MISSING***
+
+***6.*** *Cut the belt and glue ends together to match the length properly using fast glue*
+
+<p align="center">
+<a> <img src="./IMAGES/MicronStage_5.jpg" width="300"></a>
+</p>
+
+***7.*** *Done*
+
+<p align="center">
+<a> <img src="./IMAGES/MicronStage_6.jpg" width="300"></a>
+</p>
+
+## Showcase
+
+Automation of a manual microscope stage
+
+<p align="center">
+<img src="images/Assembly_XYTable_Aliepexress.png" width="600"/>
+</p>
 
 
-# Results
+
+## Get Involved
+
+This project is open so that anyone can get involved. You don't even have to learn CAD designing or programming. Find ways you can contribute in  [CONTRIBUTING](https://github.com/openUC2/UC2-GIT/blob/master/CONTRIBUTING.md)
+
+
+## License and Collaboration
+
+This project is open-source and is released under the CERN open hardware license. Our aim is to make the kits commercially available.
+We encourage everyone who is using our Toolbox to share their results and ideas, so that the Toolbox keeps improving. It should serve as a easy-to-use and easy-to-access general purpose building block solution for the area of STEAM education. All the design files are generally for free, but we would like to hear from you how is it going.
+
+You're free to fork the project and enhance it. If you have any suggestions to improve it or add any additional functions make a pull-request or file an issue.
+
+Please find the type of licenses [here](https://github.com/openUC2/UC2-GIT/blob/master/License.md)
+
+REMARK: All files have been designed using Autodesk Inventor 2019 (EDUCATION)
+
+
+## Collaborating
+If you find this project useful, please like this repository, follow us on Twitter and cite the webpage! :-)
+
+
+
+
+
+
+
+
+
+-------
+
+
+***FROM THE ORIGINAL FORK:***
+
+# Results 
 
 In the end we were able to control the movement of the stage to go from one trap to the following one. The following animation shows a trap and its neighbour appearing one after the other in the center of the camera.
 
@@ -122,20 +238,7 @@ For the **x**-axis we measured that one turn of the knob moves the stage by 2,5 
 
 Thus we decided to design an 80 teeth slave pulley for the **x**-axis knob. This leads to a higher precision : when the stepper motor rotates by 1 microstep, the stage moves by 1,95 μm along the **x** axis (with a simple Nema 17 motor)
 
-### New plate
 
-Because of structural constraints, the stepper motors had to be fixed to the stage. This is why we decided to replace a plate screwed upon the stage by a new one whose 3D template we created by using FreeCAD.
-
-This new plate has attachment points for both stepper motors and for potential switches and can be screwed to the stage.
-
-
-<p align="center">
-<img src="images/plate_top.png" width=600"/>
-</p>
-
-<p align="center">
-<img src="images/plate_bottom.png" width=600"/>
-</p>  
 
 ## Assembly
 
@@ -149,65 +252,6 @@ In order to keep things simple we decided to control both stepper motors with on
 <p align="center">
 <a href=https://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html>source</a>
 </p>  
-
-## Arduino and Python codes  
-
-First install Arduino IDE and Python 3.7 (links in the **Bill of Materials**)  
-Second download this repository. We will call the address where you save it "path/to/repo" (for example "C://User/Me/MyRepos").
-
-You need to include the library to your Arduino libraries. Copy the folder 
-```
-libromi/arduino_libraries/RomiSerial 
-```
-to your own folder Arduino (usually placed in "Documents")
-```
-Arduino/libraries/
-```
-
-An Arduino code allows to control the 2 motor drivers. Fetch it in the folder libromi:
-
-```
-libromi/firmware/Oquam
-```
-Open it with Arduino IDE software by double clicking on the file **Oquam.ino** and upload the codes on the Arduino by clicking on the arrow. If it fails make sure that you are correctly connected to the Arduino: check the card type and the COM port in the "Tools" ("Outils" on the image). 
-
-<p align="center">
-<img src="images/upload_arduino.png" width=700"/>
-</p>
-
-
-
-
-To make the interaction user-friendly, we developed a code that sends instructions to the Arduino through the Serial port. It requires Python. If you already use Python for other projects, you will want to keep this code isolated from your current install. This is possible with a virtual environment. Open Anaconda Prompt and navigate to the repository
-
-```
-conda env create -f environment.yml
-```
-Now activate the environment:  
-
-```
-conda activate motorized-stage
-``` 
-
-You can launch the interface 
-
-```
-cd path/to/repo (here replace by your own path)
-cd Motorized-stage/codes
-python launch_interface.py
-```
-Press the buttons to move by predefined values, or enter manually a value and press the "move" button. The values correspond to motor steps.
-
-
-<p align="center">
-<img src="images/command_interface.png" width=400"/>
-</p>
-
-Note: You will have to determine the backlash of each of your motors: the number of steps you have to turn before the platform moves when you change directions. You will find 4 backlash values, one per direction per motor. We found backlash values between 7 and 12 steps. 
-
-## Thanks
-
-We thank Peter Hanappe for the advices on the mechanical parts and for providing codes to control the motors. We thank Eric Aït-Yahiatène for the 3D-printing. 
 
 ## License
 
