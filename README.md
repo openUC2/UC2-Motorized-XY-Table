@@ -18,7 +18,7 @@ Curious to see what this looks like? Keep scrolling!
 
 
 <p align="center">
-<img src="images/MicronStage_7.jpg" width="600"/>
+<img src="IMAGES/MicronStage_7.jpg" width="600"/>
 </p>
 
 All necessary parts besides the motors and the stage can be 3D printed. The overall price is ~200€.
@@ -63,17 +63,24 @@ Below you will find all components necessary to build this device
 
 All these files need to be printed. We used a Prusa i3 MK3 using PLA Prusament (Galaxy Black) at layer height x.x mm and infill xx%.
 
+All files can be found in the folder [STL]
 ***THIS WILL BE UPDATED SOON!***
+
+<p align="center">
+<a href="#logo" name="logo"><img src="./IMAGES/Capture.PNG" width="600"></a>
+</p>
 
 |  Type | Details  |  Price | Link  | IMAGE |
 |---|---|---|---|---|
-| Sample inset |  This can hold three standard sample slides |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_sampleinsert.stl)  | <p align="center"> <img src="images/STL_1.png" width="200"/></p>  |
-| Motor mount |  This holds the two NEMA 17 stepper motors |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_motormount.stl)  | <p align="center"> <img src="images/STL_2.png" width="200"/></p>  |
-| UC2 mount |  This mounts the stage on the cubes |  1,00 € | [Part.stl](./STL/30_XYTabel_Aliexpress_basplateadapter.stl)  | <p align="center"> <img src="images/STL_3.png" width="200"/></p>  |
+| Sample inset |  This can hold three standard sample slides |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_sampleinsert.stl)  | <p align="center"> <img src="IMAGES/STL_1.png" width="200"/></p>  |
+| Motor mount |  This holds the two NEMA 17 stepper motors |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_motormount.stl)  | <p align="center"> <img src="IMAGES/STL_2.png" width="200"/></p>  |
+| UC2 mount |  This mounts the stage on the cubes |  1,00 € | [Part.stl](./STL/30_XYTabel_Aliexpress_basplateadapter.stl)  | <p align="center"> <img src="IMAGES/STL_3.png" width="200"/></p>  |
 | Gear Large | For the belt |  1,00 € | [Part.stl](./STL/large_button_100t.stl)  | |
 | Gear small |  For the belt |  1,00 € | [Part.stl](./STL/medium_button_80t.stl)  |  |
 | 2x Pulley  |  For the belt |  1,00 € | [Part.stl](./STL/PulleyGT2_nut.stl)  |  |
 
+
+***OPTIONAL***: The GT2 timing belts can be printed using TPU/ninjaflex material.
 
 
 ### Additional parts
@@ -82,6 +89,7 @@ This is used in the current version of the setup
 |  Type | Details  |  Price | Link  |
 |---|---|---|---|
 | Microscopy XY table |  |  55€ + Shiping  | [Aliexpress](https://de.aliexpress.com/item/32850719102.html)  |
+| Microscopy XY table (German Alternative) |  |  255€ + Shiping  | [Optik Pro](https://www.optik-pro.de/fuer-stereomikroskope/euromex-xy-tisch-dz-9020-185x145mm-dz-reihe/p,47040)  |
 | 2x Pancake NEMA 17 motors  |  9€ + Shiping  | [Ebay](https://www.ebay.de/itm/392553834244?mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5338766899&toolid=10029&customid=fc3455a0e96f52a60f2ec9abd03107d9&_trkparms=ispr%3D1&amdata=enc%3A1vaiEtGA-SQiwyEWSYtvliA35)  |
 | Motor belt GT2 |2 |1€|[Phidgets](https://www.phidgets.com/?tier=2&catid=42&pcid=35) |
 | Motor pulley 20 teeth/5mm bore |2 | 1€ |[Phidgets](https://www.phidgets.com/?tier=2&catid=42&pcid=35) | |
@@ -93,7 +101,7 @@ This is used in the current version of the setup
 
 ### Design files
 
-***Coming soon*** but will be in in the [INVENTOR](./INVENTOR) folder.
+All files are in the [INVENTOR](./INVENTOR) folder.
 
 
 ### Assembly of the DEVICE
@@ -147,7 +155,7 @@ This is used in the current version of the setup
 Automation of a manual microscope stage
 
 <p align="center">
-<img src="images/Assembly_XYTable_Aliepexress.png" width="600"/>
+<img src="IMAGES/Assembly_XYTable_Aliepexress.png" width="600"/>
 </p>
 
 
@@ -190,7 +198,7 @@ If you find this project useful, please like this repository, follow us on Twitt
 In the end we were able to control the movement of the stage to go from one trap to the following one. The following animation shows a trap and its neighbour appearing one after the other in the center of the camera.
 
 <p align="center">
-<img src="images/reach_traps.gif" width="600"/>
+<img src="IMAGES/reach_traps.gif" width="600"/>
 </p>
 
 <p align="center">
@@ -200,19 +208,19 @@ Credits: Léa Pinon and Jacques Fattacioli for the microfluidic set-up (ENS, IPG
 
 By using the EasyDriver we could rotate each motor by one microstep. In the end the set-up enabled us to reach a minimal movement of 1,95 μm along the **x** axis and of 0,05 μm along the **y** axis.
 
-In order to estimate the quality of our set-up, we measured its precision using the registration method which calculates the spatial correlation between two successive images.
+In order to estimate the quality of our set-up, we measured its precision using the registration method which calculates the spatial correlation between two successive IMAGES.
 
 On the one hand the analyses of these results shows that the stage moves linearly along the **y** axis as expected. We concluded that our set-up was of good quality for this direction.
 
 <p align="center">
-<img src="images/deplacement_y.png" width="400"/>
+<img src="IMAGES/deplacement_y.png" width="400"/>
 </p>
 
 On the other hand we discovered that the movement along the **x** axis is flawed. Indeed when moving the stage along this axis we regularly measure a small unwanted movement along the **y** axis. This shortcoming leads to imprecise movement along the **x** axis, and it seems to come from the mechanics of the manual platform.
 
 
 <p align="center">
-<img src="images/deplacement_x.png" width=400"/>
+<img src="IMAGES/deplacement_x.png" width=400"/>
 </p>
 
 # Set-up
@@ -231,7 +239,7 @@ We first tested with a simple Nema 17 motor but the couple was not sufficient to
 
 
 <p align="center">
-<img src="images/pulley.png" width=300"/>
+<img src="IMAGES/pulley.png" width=300"/>
 </p>
 
 For the **x**-axis we measured that one turn of the knob moves the stage by 2,5 cm. In the case of the **x** axis the 17HM08-1204S stepper motor has 3200 microsteps per revolution and the master pulley has 20 teeth. Thus we calculated that the **x**-axis slave pulley needed to have 32 teeth. Such a little number of teeth leads to modeling issues.
@@ -246,7 +254,7 @@ In order to keep things simple we decided to control both stepper motors with on
 
 
 <p align="center">
-<img src="images/image_from_schmalzhaus.png" width=500"/>
+<img src="IMAGES/image_from_schmalzhaus.png" width=500"/>
 </p>  
 
 <p align="center">
