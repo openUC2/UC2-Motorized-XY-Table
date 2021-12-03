@@ -64,7 +64,7 @@ Below you will find all components necessary to build this device
 All these files need to be printed. We used a Prusa i3 MK3 using PLA Prusament (Galaxy Black) at layer height x.x mm and infill xx%.
 
 All files can be found in the folder [STL]
-***THIS WILL BE UPDATED SOON!***
+
 
 <p align="center">
 <a href="#logo" name="logo"><img src="./IMAGES/Capture.PNG" width="600"></a>
@@ -72,12 +72,17 @@ All files can be found in the folder [STL]
 
 |  Type | Details  |  Price | Link  | IMAGE |
 |---|---|---|---|---|
-| Sample inset |  This can hold three standard sample slides |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_sampleinsert.stl)  | <p align="center"> <img src="IMAGES/STL_1.png" width="200"/></p>  |
-| Motor mount |  This holds the two NEMA 17 stepper motors |  1,00 € | [Part.stl](./STL/30_XYTable_Aliexpress_motormount.stl)  | <p align="center"> <img src="IMAGES/STL_2.png" width="200"/></p>  |
-| UC2 mount |  This mounts the stage on the cubes |  1,00 € | [Part.stl](./STL/30_XYTabel_Aliexpress_basplateadapter.stl)  | <p align="center"> <img src="IMAGES/STL_3.png" width="200"/></p>  |
-| Gear Large | For the belt |  1,00 € | [Part.stl](./STL/large_button_100t.stl)  | |
-| Gear small |  For the belt |  1,00 € | [Part.stl](./STL/medium_button_80t.stl)  |  |
-| 2x Pulley  |  For the belt |  1,00 € | [Part.stl](./STL/PulleyGT2_nut.stl)  |  |
+| Sample inset |  This can hold three standard sample slides |  1,00 € | [Part.stl](./STL/)  | <p align="center"> <img src="IMAGES/STL_1.png" width="200"/></p>  |
+| Motor mount |  This holds the two NEMA 17 stepper motors |  1,00 € | [Part.stl](./STL/)  | <p align="center"> <img src="IMAGES/STL_2.png" width="200"/></p>  |
+| UC2 mount |  This mounts the stage on the cubes |  1,00 € | [Part.stl](./STL/l)  | <p align="center"> <img src="IMAGES/STL_3.png" width="200"/></p>  |
+| Gear Large | For the belt |  1,00 € | [Part.stl](./STL/)  | |
+| Gear small |  For the belt |  1,00 € | [Part.stl](./STL/)  |  |
+| 2x Pulley  |  For the belt |  1,00 € | [Part.stl](./STL/)  |  |
+
+Fully assembled:
+<p align="center">
+<a href="#logo" name="logo"><img src="./IMAGES/IMG_20211203_153629.jpg" width="600"></a>
+</p>
 
 
 ***OPTIONAL***: The GT2 timing belts can be printed using TPU/ninjaflex material.
